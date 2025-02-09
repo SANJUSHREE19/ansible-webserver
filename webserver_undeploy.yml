@@ -1,0 +1,19 @@
+---
+- name: Remove Web Server
+  hosts: webservers
+  become: true
+  tasks:
+    - name: Stop Nginx
+      service:
+        name: nginx
+        state: stopped
+
+    - name: Remove Nginx
+      apt:
+        name: nginx
+        state: absent
+
+    - name: Remove Web Content
+      file:
+        path: /var/www/html/index.html
+        state: absent
