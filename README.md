@@ -27,7 +27,7 @@ sudo apt install ansible -y
     ```
 2. **Generate SSH key**:
     ```sh
-    ssh-keygen -t rsa -b 2048
+    ssh-keygen -t rsa -b 4096
     ```
 3. **Copy the SSH key to each VM**:
     ```sh
